@@ -1,0 +1,18 @@
+body {
+    background-color: #ffffff;
+
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+   list-style-type: none;
+   gap: 24px;
+   width: 1440px;
+   padding: 24px 156px;
+}
+
+.gallery-image {
+    width: 360px;
+    height: 200px;
+}
