@@ -98,7 +98,6 @@ function handleClick(event) {
   const instance = basicLightbox.create(`
    <div class = "modal">
    <img class = "modal-img" src="${sourceImage}" alt="${image.description}"/>
-   <h2>${image.description}</h2>
    </div>
     `)
   instance.show()
