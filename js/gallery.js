@@ -70,6 +70,8 @@ const galleryItems = document.querySelectorAll(".gallery-item");
 
 gallery.insertAdjacentHTML("beforeend", createMarkup(images));
 
+gallery.addEventListener("click", handleClick);
+
 function createMarkup(array) {
   return array.map((item) => `
 <li class="gallery-item">
@@ -85,30 +87,37 @@ function createMarkup(array) {
   `).join("");
   }
 
-gallery.addEventListener("click", (event) => {
+// gallery.addEventListener("click", (event) => {
+//   if (event.target.closest(".gallery-link")) {
+//     event.preventDefault();
+//   }
+// });
+
+function handleClick(event) {
   if (event.target.closest(".gallery-link")) {
     event.preventDefault();
+  };
+
+  if (event.target === event.currentTarget) {
+    return
   }
-});
-
-// galleryItems.forEach(item => {
-
+  
+  const galleryImage = event.target.closest(".gallery-image");
+  const sourceImage = galleryImage.dataset.source;
+  console.log(sourceImage);
+  const image = images.find((item) => item.original === sourceImage);
+  
+  
   
 
-//   item.addEventListener("focus", () => {
-//     item.style.width = 376;
-//     item.style.height = 208;
-    
-//     console.log(item);
+  const instance = basicLightbox.create(`
+   <div class = "modal">
+   <img class = "modal-img" src="${image.original}" alt="${image.description}"/>
+   <h2>${image.description}</h2>
+   </div>
+    `)
+  instance.show()
 
-//   })
-  
-//   item.addEventListener("blur", () => {
-//     item.style.width = 360;
-//     item.style.height = 200;
-//     console.log(item)
-//   });
-// console.log(document.activeElement)
-  
-// });
+}
+
   
