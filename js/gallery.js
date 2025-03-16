@@ -90,6 +90,10 @@ function handleClick(event) {
     event.preventDefault();
   };
 
+  if (event.target === event.currentTarget) {
+    return
+  }
+
   const galleryImage = event.target.closest(".gallery-image");
   const sourceImage = galleryImage.dataset.source;
   console.log(sourceImage);
