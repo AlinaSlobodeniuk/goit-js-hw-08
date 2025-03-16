@@ -66,6 +66,8 @@ const images = [
 
   const gallery = document.querySelector(".gallery");
 
+const galleryItems = document.querySelectorAll(".gallery-item");
+
 gallery.insertAdjacentHTML("beforeend", createMarkup(images));
 
 function createMarkup(array) {
@@ -88,4 +90,25 @@ gallery.addEventListener("click", (event) => {
     event.preventDefault();
   }
 });
+
+// galleryItems.forEach(item => {
+
+  
+
+//   item.addEventListener("focus", () => {
+//     item.style.width = 376;
+//     item.style.height = 208;
+    
+//     console.log(item);
+
+//   })
+  
+//   item.addEventListener("blur", () => {
+//     item.style.width = 360;
+//     item.style.height = 200;
+//     console.log(item)
+//   });
+// console.log(document.activeElement)
+  
+// });
   

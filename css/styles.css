@@ -12,7 +12,21 @@ body {
    padding: 24px 156px;
 }
 
+/* .gallery-item {
+
+}; */
+
 .gallery-image {
     width: 360px;
     height: 200px;
 }
+
+.gallery-image:focus {
+    transform: scale(1.05);
+    z-index: 1;
+    }
+
+.gallery-image:hover {
+    transform: scale(1.05);
+    z-index: 1;
+    }
