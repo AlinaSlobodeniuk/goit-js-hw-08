@@ -86,16 +86,13 @@ function createMarkup(array) {
   }
 
 function handleClick(event) {
-  if (event.target.closest(".gallery-link")) {
-    event.preventDefault();
+  event.preventDefault();
+  
+  if (event.target.nodeName !== "IMG") {
+    return
   };
 
-  if (event.target === event.currentTarget) {
-    return
-  }
-
-  const galleryImage = event.target.closest(".gallery-image");
-  const sourceImage = galleryImage.dataset.source;
+  const sourceImage = event.target.dataset.source;
   console.log(sourceImage);
   const image = images.find((item) => item.original === sourceImage);
   
@@ -103,8 +100,8 @@ function handleClick(event) {
    <div class = "modal">
    <img class = "modal-img" src="${sourceImage}" alt="${image.description}"/>
    </div>
-    `)
-  instance.show()
+    `);
+  instance.show();
 
 }
 
